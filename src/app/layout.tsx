@@ -14,6 +14,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title: "CashG Bank",
   description: "Send money, pay bills, and manage your finances",
