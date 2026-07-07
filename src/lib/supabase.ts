@@ -1,8 +1,8 @@
-import { createServerClient } from "@supabase/ssr"
-import { cookies } from "next/headers"
-import { createBrowserClient } from "@supabase/ssr"
+import { createServerClient, createBrowserClient } from "@supabase/ssr"
 
-export function createClient() {
+// ponytail: lazy import to avoid breaking client components that import this module
+export async function createClient() {
+  const { cookies } = await import("next/headers")
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
